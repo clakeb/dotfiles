@@ -29,4 +29,5 @@ mv cargo-make*/cargo-make $HOME/.files/cargo-make
 
 
 # Kick it off
-cd $HOME
+cd $HOME/.files
+./cargo-make make --makefile init.toml kick-off
