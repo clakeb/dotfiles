@@ -1,0 +1,11 @@
+#[tasks.kick-off]
+#dependencies = ['brew-all', 'fish-all', 'rustup', 'zim']
+
+[tasks.brew]
+script = [
+'''
+#!/bin/bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+'''
+]
+
