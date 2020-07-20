@@ -1,0 +1,32 @@
+echo "Setting up macOS..."
+
+git clone --bare https://clakeb:$gitlabtoken@gitlab.com/clakeb/cfg.git $HOME/.cfg
+
+function dotfile {
+   $(which git) --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
+}
+
+mkdir -p .config-backup
+dotfile checkout
+
+if [ $? = 0 ]; then
+  echo "Checked out config.";
+  else
+    echo "Backing up pre-existing dot files.";
+    dotfile checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .config-backup/{}
+fi;
+
+dotfile checkout
+dotfile config status.showUntrackedFiles no
+
+cd /tmp
+curl -s https://api.github.com/repos/sagiegurari/cargo-make/releases/latest \
+| grep -o "http.*x86_64-apple-darwin.zip" \
+| xargs -n 1 curl -O -sSL
+
+unzip *x86_64-apple-darwin.zip
+mv cargo-make*/cargo-make $HOME/.files/cargo-make
+
+
+# Kick it off
+cd $HOME

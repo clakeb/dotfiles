@@ -1,0 +1,37 @@
+[tasks.src]
+dependencies = ['brew-all', 'fish-all', 'rustup', 'zim']
+
+[tasks.brew-update]
+command = 'brew'
+args = ['update']
+
+[tasks.brew-upgrade]
+command = 'brew'
+args = ['upgrade']
+
+[tasks.brew-cleanup]
+command = 'brew'
+args = ['cleanup', '-s']
+
+[tasks.brew-all]
+dependencies = ['brew-update', 'brew-upgrade', 'brew-cleanup']
+
+[tasks.fish-update]
+command = 'gofish'
+args = ['update']
+
+[tasks.fish-upgrade]
+command = 'gofish'
+args = ['upgrade']
+
+[tasks.fish-cleanup]
+command = 'gofish'
+args = ['cleanup']
+
+[tasks.fish-all]
+dependencies = ['fish-update', 'fish-upgrade', 'fish-cleanup']
+
+[tasks.rustup]
+command = 'rustup'
+args = ['update']
+
