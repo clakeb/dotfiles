@@ -1,0 +1,5 @@
+[user]
+	name = Blake Barber
+	email = me@blakebarber.dev
+[core]
+	excludesfile = /Users/clakeb/.gitignore_global
