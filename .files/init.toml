@@ -9,3 +9,6 @@ script = [
 '''
 ]
 
+[tasks.bundle]
+command = 'brew'
+args = ['bundle', '--global']
