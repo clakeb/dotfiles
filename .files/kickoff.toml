@@ -1,4 +1,4 @@
-#[tasks.kick-off]
+#[tasks.kickoff]
 #dependencies = ['brew-all', 'fish-all', 'rustup', 'zim']
 
 [tasks.brew]
