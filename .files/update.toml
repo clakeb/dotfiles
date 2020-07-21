@@ -1,5 +1,5 @@
 [tasks.src]
-dependencies = ['brew-all', 'fish-all', 'rustup', 'zim']
+dependencies = ['brew-all', 'fish-all', 'rustup']
 
 [tasks.brew-update]
 command = 'brew'
@@ -13,8 +13,12 @@ args = ['upgrade']
 command = 'brew'
 args = ['cleanup', '-s']
 
+[tasks.brewfile]
+command = 'brew'
+args = ['bundle', 'dump', '--global', '-f']
+
 [tasks.brew-all]
-dependencies = ['brew-update', 'brew-upgrade', 'brew-cleanup']
+dependencies = ['brew-update', 'brew-upgrade', 'brew-cleanup', 'brewfile']
 
 [tasks.fish-update]
 command = 'gofish'

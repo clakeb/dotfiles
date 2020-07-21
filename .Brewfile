@@ -3,8 +3,8 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
-tap "homebrew/services"
 brew "bash"
+brew "fish"
 brew "mas"
 brew "p7zip"
 brew "trash"
@@ -13,7 +13,6 @@ brew "vim"
 brew "wget"
 brew "whalebrew"
 brew "zsh"
-brew "fish"
 cask "1password"
 cask "alfred"
 cask "appcleaner"
@@ -39,4 +38,9 @@ cask "tableplus"
 cask "telegram-desktop"
 cask "transmit"
 cask "vscodium"
+mas "GarageBand", id: 682658836
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
 mas "Parcel", id: 639968404
