@@ -1,6 +1,10 @@
 echo "Setting up macOS..."
 
-git clone --bare https://clakeb:$gitlabtoken@gitlab.com/clakeb/cfg.git $HOME/.cfg
+xcode-select --install
+read -p "Wait for xcode. Press any key to continue."
+
+read -p "Paste personal access token here" githubtoken
+git clone --bare https://clakeb:$githubtoken@gitlab.com/clakeb/dotfiles.git $HOME/.cfg
 
 function dotfile {
    $(which git) --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
