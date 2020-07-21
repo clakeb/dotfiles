@@ -12,3 +12,14 @@ script = [
 [tasks.bundle]
 command = 'brew'
 args = ['bundle', '--global']
+
+[tasks.gofish]
+script = [
+    'curl -fsSL https://raw.githubusercontent.com/fishworks/gofish/master/scripts/install.sh | bash',
+    'gofish init'
+]
+
+[tasks.fishes]
+command = 'gofish'
+args = ['install', 'go', 'helm', 'k9s', 'terraform', 'kubectl', 'devdash']
+
