@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "Setting up macOS..."
 
 xcode-select --install
