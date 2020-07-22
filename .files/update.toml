@@ -1,5 +1,5 @@
 [tasks.src]
-dependencies = ['brew-all', 'fish-all', 'rustup']
+dependencies = ['brew-all', 'gofish-all', 'rustup', 'fisher', 'iterm-tools']
 
 [tasks.brew-update]
 command = 'brew'
@@ -20,22 +20,27 @@ args = ['bundle', 'dump', '--global', '-f']
 [tasks.brew-all]
 dependencies = ['brew-update', 'brew-upgrade', 'brew-cleanup', 'brewfile']
 
-[tasks.fish-update]
+[tasks.gofish-update]
 command = 'gofish'
 args = ['update']
 
-[tasks.fish-upgrade]
+[tasks.gofish-upgrade]
 command = 'gofish'
 args = ['upgrade']
 
-[tasks.fish-cleanup]
+[tasks.gofish-cleanup]
 command = 'gofish'
 args = ['cleanup']
 
-[tasks.fish-all]
-dependencies = ['fish-update', 'fish-upgrade', 'fish-cleanup']
+[tasks.gofish-all]
+dependencies = ['gofish-update', 'gofish-upgrade', 'gofish-cleanup']
 
 [tasks.rustup]
 command = 'rustup'
 args = ['update']
 
+[tasks.fisher]
+command = 'fisher'
+
+[tasks.iterm-tools]
+script = ['curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash']

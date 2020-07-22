@@ -1,0 +1,1 @@
+alias dotfile="/usr/local/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"

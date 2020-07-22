@@ -1,5 +1,5 @@
-#[tasks.kickoff]
-#dependencies = ['brew-all', 'fish-all', 'rustup', 'zim']
+[tasks.kickoff]
+dependencies = ['brew', 'bundle', 'gofish', 'fishes', 'rustup', 'cargos']
 
 [tasks.brew]
 script = [
@@ -23,3 +23,20 @@ script = [
 command = 'gofish'
 args = ['install', 'go', 'helm', 'k9s', 'terraform', 'kubectl', 'devdash']
 
+[tasks.rustup]
+script = [
+    "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"
+]
+
+[tasks.cargos]
+command = 'cargo'
+args = ['install', '--force', 'wrangler', 'ytop', 'cargo-make', 'xsv']
+
+[tasks.shells]
+script = [
+    'echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells',
+    'echo "/usr/local/bin/fish" | sudo t,
+    'curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish'
+    'echo "/usr/local/bin/bash" | sudo tee -a /etc/shells',
+    'chsh -s /usr/local/bin/fish clakeb'
+]

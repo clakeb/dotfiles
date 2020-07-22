@@ -6,6 +6,8 @@ read -p "Wait for xcode. Press any key to continue."
 read -p "Paste personal access token here" githubtoken
 git clone --bare https://clakeb:$githubtoken@gitlab.com/clakeb/dotfiles.git $HOME/.cfg
 
+export HOMEBREW_GITHUB_API_TOKEN=$githubtoken
+
 function dotfile {
    $(which git) --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
 }
