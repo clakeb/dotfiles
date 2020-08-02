@@ -1,5 +1,5 @@
 [tasks.kickoff]
-dependencies = ['brew', 'bundle', 'gofish', 'fishes', 'rustup', 'cargos']
+dependencies = ['brew', 'bundle', 'gofish', 'fishes', 'rustup', 'cargos', 'shells']
 
 [tasks.brew]
 script = [
@@ -35,8 +35,8 @@ args = ['install', '--force', 'wrangler', 'ytop', 'cargo-make', 'xsv']
 [tasks.shells]
 script = [
     'echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells',
-    'echo "/usr/local/bin/fish" | sudo t,
-    'curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish'
+    'echo "/usr/local/bin/fish" | sudo tee -a /etc/shells',
     'echo "/usr/local/bin/bash" | sudo tee -a /etc/shells',
+    'curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish',
     'chsh -s /usr/local/bin/fish clakeb'
 ]
