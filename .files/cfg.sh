@@ -1,14 +1,13 @@
-#!/bin/bash
+#!/bin/zsh
 
 echo "Setting up macOS..."
 
 xcode-select --install
-read -p "Wait for xcode. Press any key to continue."
+read -s -k "?Wait for xcode. Press any key to continue."
 
-read -p "Paste personal access token here" githubtoken
-git clone --bare https://clakeb:$githubtoken@gitlab.com/clakeb/dotfiles.git $HOME/.cfg
+git clone --bare https://clakeb:$1@gitlab.com/clakeb/dotfiles.git $HOME/.cfg
 
-export HOMEBREW_GITHUB_API_TOKEN=$githubtoken
+export HOMEBREW_GITHUB_API_TOKEN=$1
 
 function dotfile {
    $(which git) --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
