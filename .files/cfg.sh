@@ -3,11 +3,11 @@
 echo "Setting up macOS..."
 
 xcode-select --install
-read -s -k "?Wait for xcode. Press any key to continue."
-
-git clone --bare https://clakeb:$1@gitlab.com/clakeb/dotfiles.git $HOME/.cfg
+read -s -k "?Wait for xcode clt to install. Press any key to continue."
 
 export HOMEBREW_GITHUB_API_TOKEN=$1
+
+git clone --bare https://clakeb:$1@gitlab.com/clakeb/dotfiles.git $HOME/.cfg
 
 function dotfile {
    $(which git) --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
