@@ -1,5 +1,5 @@
 [tasks.src]
-dependencies = ['brew-all', 'gofish-all', 'rustup', 'fisher', 'iterm-tools']
+dependencies = ['brew-all', 'gofish-all', 'rustup', 'cargos', 'fisher', 'iterm-tools']
 
 [tasks.brew-update]
 command = 'brew'
@@ -39,10 +39,15 @@ dependencies = ['gofish-update', 'gofish-upgrade', 'gofish-cleanup']
 command = 'rustup'
 args = ['update']
 
+[tasks.cargos]
+command = 'cargo'
+args = ['install-update', '-a']
+
 [tasks.fisher]
 script = [
     '#!/usr/local/bin/fish',
     'eksctl completion fish > ~/.config/.files/my-fishes/completions/eksctl.fish',
+    'fluxctl completion fish > ~/.config/.files/my-fishes/completions/fluxctl.fish',
     'fisher'
 ]
 
