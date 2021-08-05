@@ -6,6 +6,12 @@ export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$PATH
 ## Rust
 export PATH=$HOME/.cargo/bin:$PATH
 
+## Python
+
+
+## Ruby
+
+
 ## HOME
 export PATH=$HOME/.local/bin:$PATH
 
