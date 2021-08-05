@@ -12,6 +12,9 @@ export PATH=$HOME/.cargo/bin:$PATH
 ## Ruby
 
 
+## PHP
+
+
 ## HOME
 export PATH=$HOME/.local/bin:$PATH
 
