@@ -24,3 +24,6 @@ export PATH=$HOME/.local/bin:$PATH
 ## Starship
 eval "$(starship init bash)"
 
+## iTerm2
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
