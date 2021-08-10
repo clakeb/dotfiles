@@ -4,8 +4,10 @@
   ## install xcode tools
   ## install brew
 
-  # if m1
-  ## install rosetta
+# if m1
+{{ if (and (eq .chezmoi.os "debian") (eq .chezmoi.arch "arm64")) }}
+/usr/sbin/softwareupdate --install-rosetta --agree-to-license
+{{ end }}
 
 # linux || macos
 ## install zimfw
