@@ -20,6 +20,9 @@ export PATH=$HOME/.cargo/bin:$PATH
 ## HOME
 export PATH=$HOME/.local/bin:$PATH
 
+## Basher
+export PATH="$HOME/.basher/bin:$PATH"
+
 # Source
 ## Starship
 eval "$(starship init bash)"
@@ -27,3 +30,5 @@ eval "$(starship init bash)"
 ## iTerm2
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
+## Basher
+eval "$(basher init - bash)"
