@@ -31,7 +31,7 @@ zmodule zsh-users/zsh-history-substring-search
 # Personal additions
 zmodule archive
 zmodule fzf
-zmodule exa
+# zmodule exa
 zmodule ~/.my-zims -n my-zims -s paths.zsh -s sources.zsh
 
 # }}} End configuration added by Zim install

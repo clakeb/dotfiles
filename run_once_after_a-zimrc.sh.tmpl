@@ -4,4 +4,8 @@
 # get user
 
 # /Users/clakeb/.zimrc hash: {{ include "/Users/clakeb/.zimrc" | sha256sum }}
+zimfw () {
+	source /Users/clakeb/.zim/zimfw.zsh "${@}"
+}
+
 zimfw uninstall && zimfw install
