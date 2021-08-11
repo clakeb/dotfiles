@@ -1,6 +1,9 @@
 #!/bin/zsh
 
 # if macos
+{{ if (and (eq .chezmoi.os "debian") (ne lookPath "gcc")) }} echo true {{ else }} echo false {{ end }}
+{{ if (and (eq .chezmoi.os "debian") (ne .email "me@home.org")) }}...{{ end }}
+
   ## install xcode tools
   ## install brew
 
@@ -11,4 +14,9 @@
 
 # linux || macos
 ## install zimfw
-curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
+if [[ ! -d ~/.zim ]]; then
+    curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
+fi
+
+## install rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
