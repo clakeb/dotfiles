@@ -1,22 +1,30 @@
 #!/bin/zsh
 
 # if macos
-{{ if (and (eq .chezmoi.os "debian") (ne lookPath "gcc")) }} echo true {{ else }} echo false {{ end }}
-{{ if (and (eq .chezmoi.os "debian") (ne .email "me@home.org")) }}...{{ end }}
+{{ if eq .chezmoi.os "darwin" }}
+## install xcode tools
+if [[ ! -e /usr/bin/gcc ]]; then
+  xcode-select --install
+fi
 
-  ## install xcode tools
-  ## install brew
+## install brew
+if [[ ! -d ~/.zim ]]; then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+{{ end }}
 
 # if m1
-{{ if (and (eq .chezmoi.os "debian") (eq .chezmoi.arch "arm64")) }}
+{{ if (and (eq .chezmoi.os "darwin") (eq .chezmoi.arch "arm64")) }}
 /usr/sbin/softwareupdate --install-rosetta --agree-to-license
 {{ end }}
 
 # linux || macos
 ## install zimfw
 if [[ ! -d ~/.zim ]]; then
-    curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
+  curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
 fi
 
 ## install rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+if [[ ! -d ~/.cargo ]]; then
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+fi
