@@ -1,4 +1,4 @@
-# Random
+# zsh
 bindkey -v
 setopt CORRECT
 

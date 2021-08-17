@@ -18,7 +18,6 @@ fi
 /usr/sbin/softwareupdate --install-rosetta --agree-to-license
 {{ end }}
 
-# linux || macos
 ## install zimfw
 if [[ ! -d ~/.zim ]]; then
   curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh

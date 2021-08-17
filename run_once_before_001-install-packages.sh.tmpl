@@ -1,0 +1,15 @@
+#!/bin/zsh
+
+{{ if eq .chezmoi.os "darwin" }}
+export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$PATH
+
+## brew bundle
+
+
+{{ end }}
+
+## OS Agnostic
+export PATH=/Users/clakeb/bin:/Users/clakeb/.bin:/Users/clakeb/.local/bin:/Users/clakeb/go/bin:/Users/clakeb/.cargo/bin:$PATH
+
+## Rust
+cargo install --force wrangler xsv cargo-update bottom
