@@ -4,12 +4,43 @@
 export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$PATH
 
 ## brew bundle
+brew bundle --no-lock --file=/dev/stdin <<EOF
+brew "git"
+brew "sd"
 
-
+# ASDF
+## ASDF Node
+brew "gpg"
+brew "gawk"
+EOF
 {{ end }}
 
-## OS Agnostic
+# OS Agnostic
+## ASDF
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.1
+source $HOME/.asdf/asdf.sh
+
+### Plugins
+#### Direnv
+asdf plugin add direnv
+asdf install direnv latest
+asdf global direnv latest
+
+### Pythons
+asdf plugin add python
+asdf install python latest
+asdf global python latest
+
+### Rubies
+
+### Nodes
+asdf plugin add nodejs
+asdf install nodejs latest
+asdf global nodejs latest
+
+### PHPs
+
 export PATH=/Users/clakeb/bin:/Users/clakeb/.bin:/Users/clakeb/.local/bin:/Users/clakeb/go/bin:/Users/clakeb/.cargo/bin:$PATH
 
 ## Rust
-cargo install --force wrangler xsv cargo-update bottom
+cargo install wrangler xsv cargo-update bottom
