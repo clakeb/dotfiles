@@ -1,0 +1,4 @@
+direnv 2.28.0
+python 3.9.6
+nodejs 16.6.2
+terraform 1.0.4
