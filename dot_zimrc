@@ -2,7 +2,7 @@
 # -------
 # Modules
 # -------
-
+# some new comment
 # Sets sane Zsh built-in environment options.
 zmodule environment
 # Provides handy git aliases and functions.
@@ -31,7 +31,7 @@ zmodule zsh-users/zsh-history-substring-search
 # Personal additions
 zmodule archive
 zmodule fzf
-zmodule asdf
 zmodule ~/.files -n dotfiles
+zmodule asdf
 
 # }}} End configuration added by Zim install
