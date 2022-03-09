@@ -25,4 +25,4 @@ alias le='l --extended'                 # Long format, newest status change (cti
 
 ## ASDF globals
 ### Python
-alias python='asdf exec python'
+# alias python='asdf exec python'

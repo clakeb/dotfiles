@@ -17,6 +17,6 @@
 	"preview_on_click": true,
 	// Columns in which to display vertical rulers
 	"rulers": [80, 120],
-	"font_size": 15,
+	"font_size": 14,
 	"font_face": "JetBrainsMono Nerd Font",
 }
