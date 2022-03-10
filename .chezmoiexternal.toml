@@ -16,6 +16,11 @@
     url = "https://iterm2.com/shell_integration/bash"
     refreshPeriod = "72h"
 
+[".basher"]
+    type = "git-repo"
+    url = "https://github.com/basherpm/basher.git"
+    refreshPeriod = "72h"
+
 # [".iterm2"]
 #     type = ""
 #     url = ""
