@@ -8,14 +8,16 @@ if [[ ! -e /usr/bin/gcc ]]; then
 fi
 
 ## install brew
-if [[ ! -d ~/.zim ]]; then
+if [[ ! -e /opt/homebrew/bin/brew ]]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 {{ end }}
 
 # if m1
 {{ if (and (eq .chezmoi.os "darwin") (eq .chezmoi.arch "arm64")) }}
-/usr/sbin/softwareupdate --install-rosetta --agree-to-license
+if [ ! $(/usr/bin/pgrep oahd >/dev/null 2>&1;echo $?) -eq 0 ]; then
+  /usr/sbin/softwareupdate --install-rosetta --agree-to-license
+fi
 {{ end }}
 
 ## install rust
