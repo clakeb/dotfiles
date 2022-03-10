@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 # if macos
 {{ if eq .chezmoi.os "darwin" }}
@@ -18,12 +18,12 @@ fi
 /usr/sbin/softwareupdate --install-rosetta --agree-to-license
 {{ end }}
 
-## install zimfw
-if [[ ! -d ~/.zim ]]; then
-  curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
-fi
-
 ## install rust
 if [[ ! -d ~/.cargo ]]; then
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+fi
+
+## install gofish
+if [[ ! -d /usr/local/gofish ]]; then
+  curl -fsSL https://raw.githubusercontent.com/fishworks/gofish/main/scripts/install.sh | bash
 fi

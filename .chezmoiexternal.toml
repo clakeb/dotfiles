@@ -1,0 +1,22 @@
+[".asdf"]
+    type = "git-repo"
+    url = "https://github.com/asdf-vm/asdf.git"
+    refreshPeriod = "72h"
+
+[".ble.sh"]
+    type = "git-repo"
+    url = "https://github.com/akinomyoga/ble.sh.git"
+    refreshPeriod = "72h"
+    [".ble.sh".filter]
+        command = "make"
+        args = ["-C ble.sh install PREFIX=~/.local"]
+
+[".iterm2_shell_integration.bash"]
+    type = "file"
+    url = "https://iterm2.com/shell_integration/bash"
+    refreshPeriod = "72h"
+
+# [".iterm2"]
+#     type = ""
+#     url = ""
+#     refreshPeriod = "72h"
