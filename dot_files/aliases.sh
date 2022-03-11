@@ -23,3 +23,6 @@ alias lk='l -ssize'                     # Long format, largest file size last
 alias lt='l -smodified'                 # Long format, newest modification time last
 alias lc='l -schanged'                  # Long format, newest status change (ctime) last
 alias le='l --extended'                 # Long format, newest status change (ctime) last
+
+## vimish
+alias vim=nvim

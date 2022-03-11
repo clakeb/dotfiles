@@ -19,12 +19,22 @@ brew "trash"
 EOF
 {{ end }}
 
-# OS Agnostic
-## Bash
-if [[ ! $0 != -bash ]]; then
-	chsh -s $(which bash) {{ .chezmoi.username }}
+## bash
+{{ if (and (eq .chezmoi.os "darwin") (eq .chezmoi.arch "arm64")) }}
+if [[ $SHELL != /opt/homebrew/bin/bash ]]; then
+  chsh -s /opt/homebrew/bin/bash {{ .chezmoi.username }}
 fi
+{{ else if (and (eq .chezmoi.os "darwin") (eq .chezmoi.arch "amd64"))}}
+if [[ $SHELL != /usr/local/bin/bash ]]; then
+  chsh -s /usr/local/bin/bash {{ .chezmoi.username }}
+fi
+{{ else }}
+if [[ $SHELL != /bin/bash ]]; then
+  chsh -s /bin/bash {{ .chezmoi.username }}
+fi
+{{ end }}
 
+# OS Agnostic
 ## basher
 
 ## GoFish
@@ -41,12 +51,10 @@ source $HOME/.asdf/asdf.sh
 ### Pythons
 asdf plugin add python
 asdf install python latest
-asdf global python latest
 
 ### Terraforms
 asdf plugin add terraform https://github.com/asdf-community/asdf-hashicorp.git
 asdf install terraform latest
-asdf global terraform latest
 
 ### Nodes
 nodes=(lts latest)
@@ -54,7 +62,6 @@ asdf plugin add nodejs
 for i in ${nodes[@]}; do
 	asdf install nodejs $i
 done
-asdf global nodejs latest
 
 ## Java
 javas=(adoptopenjdk-17.0.2+8 adoptopenjdk-jre-17.0.2+8 liberica-8u322+6 liberica-jre-8u322+6)
@@ -64,6 +71,7 @@ for i in "${javas[@]}"; do
 done
 
 ## Rust
+
 export PATH=$HOME/.cargo/bin:$PATH
 crates=(wrangler cargo-update bottom)
 for i in "${crates[@]}"; do

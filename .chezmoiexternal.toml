@@ -5,12 +5,12 @@
     [".asdf".clone]
         args = ["--branch", "v0.9.0"]
 
-[".ble.sh"]
+[".files/ble.sh"]
     type = "git-repo"
     url = "https://github.com/akinomyoga/ble.sh.git"
     refreshPeriod = "72h"
 
-[".iterm2_shell_integration"]
+[".files/iterm2_shell_integration"]
     type = "git-repo"
     url = "https://github.com/gnachman/iTerm2-shell-integration.git"
     refreshPeriod = "72h"

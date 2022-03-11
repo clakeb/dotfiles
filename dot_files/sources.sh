@@ -12,4 +12,4 @@ eval "$(basher init - bash)"
 eval "$(starship init bash)"
 
 ## iTerm2
-test -e "${HOME}/.iterm2_shell_integration/shell_integration/bash" && . "${HOME}/.iterm2_shell_integration/shell_integration/bash"
+test -e "${HOME}/.files/iterm2_shell_integration/shell_integration/bash" && . "${HOME}/.files/iterm2_shell_integration/shell_integration/bash"
