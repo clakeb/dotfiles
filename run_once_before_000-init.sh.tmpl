@@ -30,3 +30,8 @@ fi
 if [[ ! -d /usr/local/gofish ]]; then
   curl -fsSL https://raw.githubusercontent.com/fishworks/gofish/main/scripts/install.sh | bash
 fi
+
+## install asdf
+if [[ ! -d $HOME/.asdf ]]; then
+  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.9.0
+fi

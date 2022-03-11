@@ -26,3 +26,6 @@ alias le='l --extended'                 # Long format, newest status change (cti
 
 ## vimish
 alias vim=nvim
+
+## bat
+alias cat=bat

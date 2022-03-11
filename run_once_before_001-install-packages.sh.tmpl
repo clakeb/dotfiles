@@ -15,11 +15,26 @@ brew "curl"
 brew "chezmoi"
 brew "gh"
 brew "trash"
+brew "exa"
+brew "bat"
+brew "starship"
+brew "gawk"
+brew "trash"
 
 EOF
+
+## Shells
+if ! grep -q /opt/homebrew/bin/bash "/etc/shells"; then
+  echo /opt/homebrew/bin/bash | sudo tee -a /etc/shells
+fi
+
+if ! grep -q /usr/local/bin/bash "/etc/shells"; then
+  echo /usr/local/bin/bash | sudo tee -a /etc/shells
+fi
 {{ end }}
 
 ## bash
+
 {{ if (and (eq .chezmoi.os "darwin") (eq .chezmoi.arch "arm64")) }}
 if [[ $SHELL != /opt/homebrew/bin/bash ]]; then
   chsh -s /opt/homebrew/bin/bash {{ .chezmoi.username }}
