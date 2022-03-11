@@ -5,6 +5,7 @@
 ## install xcode tools
 if [[ ! -e /usr/bin/gcc ]]; then
   xcode-select --install
+  read -p "Press Enter to continue" </dev/tty
 fi
 
 ## install brew
