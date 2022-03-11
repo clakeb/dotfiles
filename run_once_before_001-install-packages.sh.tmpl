@@ -21,7 +21,7 @@ EOF
 
 # OS Agnostic
 ## Bash
-if [[ ! $0 == -bash ]]; then
+if [[ ! $0 != -bash ]]; then
 	chsh -s $(which bash) {{ .chezmoi.username }}
 fi
 
@@ -49,8 +49,11 @@ asdf install terraform latest
 asdf global terraform latest
 
 ### Nodes
+nodes=(lts latest)
 asdf plugin add nodejs
-asdf install nodejs latest
+for i in ${nodes[@]}; do
+	asdf install nodejs $i
+done
 asdf global nodejs latest
 
 ## Java

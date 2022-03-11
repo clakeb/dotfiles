@@ -9,9 +9,6 @@
     type = "git-repo"
     url = "https://github.com/akinomyoga/ble.sh.git"
     refreshPeriod = "72h"
-    [".ble.sh".filter]
-        command = "make"
-        args = ["-C", "ble.sh", "install", "PREFIX=~/.local"]
 
 [".iterm2_shell_integration"]
     type = "git-repo"
