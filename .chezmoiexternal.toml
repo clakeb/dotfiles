@@ -2,6 +2,8 @@
     type = "git-repo"
     url = "https://github.com/asdf-vm/asdf.git"
     refreshPeriod = "72h"
+    [".asdf".clone]
+        args = ["--branch", "v0.9.0"]
 
 [".ble.sh"]
     type = "git-repo"
@@ -9,19 +11,14 @@
     refreshPeriod = "72h"
     [".ble.sh".filter]
         command = "make"
-        args = ["-C ble.sh install PREFIX=~/.local"]
+        args = ["-C", "ble.sh", "install", "PREFIX=~/.local"]
 
-[".iterm2_shell_integration.bash"]
-    type = "file"
-    url = "https://iterm2.com/shell_integration/bash"
+[".iterm2_shell_integration"]
+    type = "git-repo"
+    url = "https://github.com/gnachman/iTerm2-shell-integration.git"
     refreshPeriod = "72h"
 
 [".basher"]
     type = "git-repo"
     url = "https://github.com/basherpm/basher.git"
     refreshPeriod = "72h"
-
-# [".iterm2"]
-#     type = ""
-#     url = ""
-#     refreshPeriod = "72h"

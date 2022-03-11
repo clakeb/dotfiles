@@ -1,14 +1,5 @@
-## /usr/local
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
-
 ## Brew
 export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$PATH
-
-## PHP
-
-## Python
-
-## Ruby
 
 ## Rust
 export PATH=$HOME/.cargo/bin:$PATH

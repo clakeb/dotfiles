@@ -18,10 +18,8 @@ EOF
 
 # OS Agnostic
 ## ASDF
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.1
 source $HOME/.asdf/asdf.sh
 
-### Plugins
 ### Pythons
 asdf plugin add python
 asdf install python latest
@@ -34,8 +32,6 @@ asdf plugin add nodejs
 asdf install nodejs latest
 asdf global nodejs latest
 
-### PHPs
-
 ## Rust
-export PATH=/Users/clakeb/.cargo/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
 cargo install wrangler xsv cargo-update bottom
