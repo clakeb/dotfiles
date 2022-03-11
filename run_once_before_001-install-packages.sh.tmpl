@@ -10,13 +10,31 @@ brew "sd"
 brew "bash"
 brew "zsh"
 brew "coreutils"
+brew "neovim"
+brew "curl"
+brew "chezmoi"
+brew "gh"
+brew "trash"
 
-brew "gpg"
-brew "gawk"
 EOF
 {{ end }}
 
 # OS Agnostic
+## Bash
+if [[ ! $0 == -bash ]]; then
+	chsh -s $(which bash) {{ .chezmoi.username }}
+fi
+
+## basher
+
+## GoFish
+fishes=(go helm)
+for i in "${fishes[@]}"; do
+	if [[ ! -d /usr/local/gofish/Barrel/$i ]]; then
+		gofish install $i
+	fi
+done
+
 ## ASDF
 source $HOME/.asdf/asdf.sh
 
@@ -35,6 +53,18 @@ asdf plugin add nodejs
 asdf install nodejs latest
 asdf global nodejs latest
 
+## Java
+javas=(adoptopenjdk-17.0.2+8 adoptopenjdk-jre-17.0.2+8 liberica-8u322+6 liberica-jre-8u322+6)
+asdf plugin add java
+for i in "${javas[@]}"; do
+	asdf install java $i
+done
+
 ## Rust
 export PATH=$HOME/.cargo/bin:$PATH
-cargo install wrangler xsv cargo-update bottom
+crates=(wrangler cargo-update bottom)
+for i in "${crates[@]}"; do
+	if [[ ! -d $i* ]]; then
+		cargo install $i
+	fi
+done
