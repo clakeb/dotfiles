@@ -1,10 +1,3 @@
-[".asdf"]
-    type = "git-repo"
-    url = "https://github.com/asdf-vm/asdf.git"
-    refreshPeriod = "72h"
-    [".asdf".clone]
-        args = ["--branch", "v0.9.0"]
-
 [".files/iterm2_shell_integration"]
     type = "git-repo"
     url = "https://github.com/gnachman/iTerm2-shell-integration.git"
@@ -13,4 +6,14 @@
 [".basher"]
     type = "git-repo"
     url = "https://github.com/basherpm/basher.git"
+    refreshPeriod = "72h"
+
+[".zshrc"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/zimfw/install/master/src/templates/zshrc"
+    refreshPeriod = "72h"
+
+[".zimrc"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/zimfw/install/master/src/templates/zimrc"
     refreshPeriod = "72h"

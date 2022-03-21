@@ -1,6 +1,6 @@
 #!/opt/homebrew/bin/zsh
+source $HOME/.zshrc 
 
-export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$PATH 
 {{ if eq .chezmoi.os "darwin" }}
 ## Brew
 export HOMEBREW_CLEANUP_MAX_AGE_DAYS=30
@@ -22,7 +22,22 @@ gofish update && gofish upgrade
 
 
 ## Source (last)
+if ! grep -q "zmodule archive" "${HOME}/.zimrc"; then
+  echo zmodule archive | tee -a $HOME/.zimrc
+fi
+
+if ! grep -q "zmodule asdf" "${HOME}/.zimrc"; then
+  echo zmodule asdf | tee -a $HOME/.zimrc
+fi
+
+if ! grep -q "zmodule fzf" "${HOME}/.zimrc"; then
+  echo zmodule fzf | tee -a $HOME/.zimrc
+fi
+
+if ! grep -q "zmodule ~/.files -n dotfiles" "${HOME}/.zimrc"; then
+  echo zmodule ~/.files -n dotfiles | tee -a $HOME/.zimrc
+fi
+
 zimfw upgrade && zimfw update
 zimfw build && zimfw clean
 zimfw list && zimfw info
-

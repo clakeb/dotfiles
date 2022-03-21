@@ -6,7 +6,7 @@ fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit && compinit
 
 ## Starship (last)
-eval "$(starship init bash)"
+eval "$(starship init zsh)"
 
 ## iTerm2
 test -e "${HOME}/.files/iterm2_shell_integration/shell_integration/zsh" && . "${HOME}/.files/iterm2_shell_integration/shell_integration/zsh"
