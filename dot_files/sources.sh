@@ -1,15 +1,12 @@
 ## basher
-eval "$(basher init - bash)"
+eval "$(basher init - zsh)"
 
 ## asdf
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
-
-## ble.sh
-. ~/.local/share/blesh/ble.sh
+fpath=(${ASDF_DIR}/completions $fpath)
+autoload -Uz compinit && compinit
 
 ## Starship (last)
 eval "$(starship init bash)"
 
 ## iTerm2
-test -e "${HOME}/.files/iterm2_shell_integration/shell_integration/bash" && . "${HOME}/.files/iterm2_shell_integration/shell_integration/bash"
+test -e "${HOME}/.files/iterm2_shell_integration/shell_integration/zsh" && . "${HOME}/.files/iterm2_shell_integration/shell_integration/zsh"

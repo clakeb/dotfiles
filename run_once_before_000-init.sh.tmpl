@@ -35,3 +35,9 @@ fi
 if [[ ! -d $HOME/.asdf ]]; then
   git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.9.0
 fi
+
+## install zimfw
+if [[ ! -f $HOME/.zimrc ]]; then
+  curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
+fi
+
