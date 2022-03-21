@@ -5,20 +5,20 @@
       "subtext" : {
         "size" : 11,
         "colorSelected" : "#FFFFFFCB",
-        "font" : "Dank Mono",
+        "font" : "JetBrainsMono Nerd Font Mono",
         "color" : "#FFFFFF7E"
       },
       "shortcut" : {
         "size" : 16,
         "colorSelected" : "#FFFFFFFF",
-        "font" : "Dank Mono",
+        "font" : "JetBrainsMono Nerd Font Mono",
         "color" : "#FFFFFF7E"
       },
       "backgroundSelected" : "#008E00FF",
       "text" : {
         "size" : 12,
         "colorSelected" : "#FFFFFFFF",
-        "font" : "Dank Mono",
+        "font" : "JetBrainsMono Nerd Font Mono",
         "color" : "#FFFFFFCB"
       },
       "iconPaddingHorizontal" : 0,
@@ -33,7 +33,7 @@
       "text" : {
         "size" : 37,
         "colorSelected" : "#000000FF",
-        "font" : "Dank Mono",
+        "font" : "JetBrainsMono Nerd Font Mono",
         "color" : "#FFFFFFCB"
       },
       "background" : "#0000003E",
@@ -50,6 +50,7 @@
       "roundness" : 3,
       "paddingVertical" : 0
     },
+    "credit" : "Blake Barber",
     "visualEffectMode" : 2,
     "separator" : {
       "color" : "#CBCBCBF3",
@@ -59,6 +60,6 @@
       "color" : "#358188FF",
       "thickness" : 0
     },
-    "name" : "Blake Alfred Dark"
+    "name" : "blake-alfred-dark"
   }
 }
