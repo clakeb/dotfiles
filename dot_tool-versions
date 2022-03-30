@@ -1,5 +1,5 @@
-python latest
-nodejs latest
+python 3.10.4
+nodejs lts
 terraform 1.1.5
 ruby 3.0.2
 gcloud 371.0.0

@@ -5,6 +5,9 @@ eval "$(basher init - zsh)"
 fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit && compinit
 
+## fzf
+$(brew --prefix)/opt/fzf/install
+
 ## Starship (last)
 eval "$(starship init zsh)"
 

@@ -14,5 +14,7 @@
 	<integer>2</integer>
 	<key>ejectallKeywordEnabled</key>
 	<true/>
+	<key>quitallConfirm</key>
+	<true/>
 </dict>
 </plist>
